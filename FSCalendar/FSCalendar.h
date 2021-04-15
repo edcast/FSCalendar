@@ -510,6 +510,8 @@ IB_DESIGNABLE
  */
 - (void)handleScopeGesture:(UIPanGestureRecognizer *)sender;
 
+- (void)removeSelectedDates;
+
 @end
 
 

@@ -162,7 +162,6 @@
     switch (self.calendar.transitionCoordinator.representingScope) {
         case FSCalendarScopeMonth: {
             if (_scrollDirection == UICollectionViewScrollDirectionHorizontal) {
-                // 多出的两项需要制空
                 if ((indexPath.item == 0 || indexPath.item == [self.collectionView numberOfItemsInSection:0] - 1)) {
                     text = nil;
                 } else {

@@ -883,6 +883,12 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     return [NSArray arrayWithArray:_selectedDates];
 }
 
+- (void)removeSelectedDates
+{
+    _selectedDates = [[NSMutableArray alloc] init];
+    [self.collectionView reloadData];
+}
+
 - (CGFloat)preferredHeaderHeight
 {
     if (_headerHeight == FSCalendarAutomaticDimension) {

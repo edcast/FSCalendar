@@ -309,7 +309,9 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
             switch (self.transitionCoordinator.representingScope) {
                 case FSCalendarScopeMonth: {
                     CGFloat contentHeight = rowHeight*6 + padding*2;
-                    _daysContainer.frame = CGRectMake(0, headerHeight+weekdayHeight, self.fs_width, contentHeight);
+//  Commented 314 and added 313 to hide default caledndar header
+                    _daysContainer.frame = CGRectMake(0, weekdayHeight, self.fs_width, contentHeight);
+//                    _daysContainer.frame = CGRectMake(0, headerHeight+weekdayHeight, self.fs_width, contentHeight);
                     _collectionView.frame = CGRectMake(0, 0, _daysContainer.fs_width, contentHeight);
                     break;
                 }
@@ -1284,15 +1286,16 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
 {
     if (!self.floatingMode) {
         
-        if (!_calendarHeaderView) {
-            
-            FSCalendarHeaderView *headerView = [[FSCalendarHeaderView alloc] initWithFrame:CGRectZero];
-            headerView.calendar = self;
-            headerView.scrollEnabled = _scrollEnabled;
-            [_contentView addSubview:headerView];
-            self.calendarHeaderView = headerView;
-            
-        }
+//  Commented below code to hide default caledndar header
+//        if (!_calendarHeaderView) {
+//
+//            FSCalendarHeaderView *headerView = [[FSCalendarHeaderView alloc] initWithFrame:CGRectZero];
+//            headerView.calendar = self;
+//            headerView.scrollEnabled = _scrollEnabled;
+//            [_contentView addSubview:headerView];
+//            self.calendarHeaderView = headerView;
+//
+//        }
         
         if (!_calendarWeekdayView) {
             FSCalendarWeekdayView *calendarWeekdayView = [[FSCalendarWeekdayView alloc] initWithFrame:CGRectZero];
